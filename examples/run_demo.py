@@ -21,7 +21,10 @@ def main() -> None:
     print("Local score:", local_result.score)
     print("Local similarity:", f"{local_result.similarity:.2%}")
 
-    # quick in-memory consensus example from equal-length sequences
+    print("\nGlobal alignment block:")
+    print("seq1", global_result.aligned_seq_a)
+    print("seq2", global_result.aligned_seq_b)
+
     from Bio.Align import MultipleSeqAlignment
 
     alignment = MultipleSeqAlignment(records)
