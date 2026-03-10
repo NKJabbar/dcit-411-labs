@@ -72,6 +72,27 @@ cons  MKTAYIAKQRTXSFVKSXFSRQDILDLWIFHTQGXF-PQ
 - Structural alignment helper using `Bio.PDB.Superimposer`.
 - Consensus sequence generation from aligned residues.
 
+## Features implemented
+
+1. **Data collection and preprocessing**
+   - FASTA loading.
+   - Sequence cleaning (remove gaps/unknowns, uppercase conversion).
+
+2. **Pairwise alignment**
+   - Global alignment (Needleman–Wunsch-style) via `PairwiseAligner(mode="global")`.
+   - Local alignment (Smith–Waterman-style) via `PairwiseAligner(mode="local")`.
+   - Matrix + gap penalty customization.
+   - Metrics: score, identity, similarity.
+
+3. **Multiple sequence alignment (MSA)**
+   - Wrapper for ClustalW / MUSCLE / MAFFT (when installed in PATH).
+   - Runtime + memory benchmark helper.
+   - MSA consensus sequence generation.
+
+4. **Advanced topics support**
+   - PSI-BLAST command builder utility.
+   - Basic structural alignment helper using `Bio.PDB.Superimposer`.
+
 ## Quick start
 
 ```bash
@@ -90,4 +111,4 @@ python -m pytest -q
 ## Notes
 
 - External MSA tools (ClustalW/MUSCLE/MAFFT) must be installed separately for MSA execution.
-- PSI-BLAST and structural alignment require local BLAST/PDB inputs in your environment.
+- PSI-BLAST/structural alignment helpers are provided as practical hooks for project extensions.
